@@ -10,10 +10,11 @@ import { join } from 'path';
 // GitHub Repo 路徑設定
 const repoBase = 'Felix-0901/agent-skills';
 
-// 可用的技能列表
+// 可用的技能列表（新增技能時請更新此列表）
 const availableSkills = [
-  { name: 'flutter-pro', value: 'flutter-pro' },
-  { name: 'logo-design', value: 'logo-design' },
+  { name: 'Flutter Pro (App 開發)', value: 'flutter-pro' },
+  { name: 'Logo Design (設計)', value: 'logo-design' },
+  { name: 'Skill Architect (技能產生器)', value: 'skill-architect' },
 ];
 
 // 預設安裝路徑選項
@@ -109,7 +110,7 @@ async function main() {
   // 下載每個選擇的技能
   for (const skill of selectedSkills) {
     const targetPath = join(installPath, skill);
-    const degitSource = `${repoBase}/skills/${skill}`;
+    const degitSource = `${repoBase}/.agent/skills/${skill}`;
 
     console.log(chalk.yellow(`📥 正在下載 ${skill}...`));
     console.log(chalk.gray(`   來源: ${degitSource}`));
